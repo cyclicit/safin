@@ -3,6 +3,9 @@ import './App.css';
 import { FaLinkedin, FaGithub, FaTwitter, FaArrowDown } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { FiAward, FiBriefcase, FiUser, FiCode } from 'react-icons/fi';
+import p1 from './Screenshot 2025-05-05 104617.png';
+import p2 from './Screenshot 2025-05-05 105046.png';
+import p3 from './Screenshot 2025-05-06 232806.png';
 
 function App() {
   
@@ -298,29 +301,29 @@ function App() {
           <h2 className="section-title">Notable <span>Projects</span></h2>
           <div className="projects-grid">
             <div className="project-card">
-              <div className="project-image" style={{backgroundImage: "url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485')"}}>
+              <div className="project-image" style={{backgroundImage: `url(https://i.ibb.co.com/LD5vTV8d/Screenshot-2025-05-05-104617.png)`  }}>
                 <div className="project-overlay">
-                  <h3>Nexus AI Platform</h3>
-                  <p>Enterprise AI solution adopted by Fortune 500 companies</p>
-                  <button className="btn-small">View Details</button>
+                  <h3>College Website</h3>
+                  <p>A fully functional Project</p>
+                  <button  onClick={() => window.open("https://shahidabulkashemcollege.com", "_blank")} className="btn-small">View Details</button>
                 </div>
               </div>
             </div>
             <div className="project-card">
-              <div className="project-image" style={{backgroundImage: "url('https://images.unsplash.com/photo-1551288049-bebda4e38f71')"}}>
+              <div className="project-image" style={{backgroundImage: `url(https://i.ibb.co.com/p6DQyhJ7/Screenshot-2025-05-05-105046.png)`}}>
                 <div className="project-overlay">
-                  <h3>Cyclic Cloud Suite</h3>
-                  <p>Revolutionary cloud infrastructure platform</p>
-                  <button className="btn-small">View Details</button>
+                  <h3>Pet E-Commerce</h3>
+                  <p>Prototype</p>
+                  <button onClick={() => window.open("https://petandvet.netlify.app", "_blank")} className="btn-small">View Details</button>
                 </div>
               </div>
             </div>
             <div className="project-card">
-              <div className="project-image" style={{backgroundImage: "url('https://images.unsplash.com/photo-1563986768609-322da13575f3')"}}>
+              <div className="project-image" style={{backgroundImage: `url(https://i.ibb.co.com/RpF5cSnQ/Screenshot-2025-05-06-232806.png)`}}>
                 <div className="project-overlay">
-                  <h3>UrbanTech Initiative</h3>
-                  <p>Smart city solutions for sustainable urban development</p>
-                  <button className="btn-small">View Details</button>
+                  <h3>Meat-up</h3>
+                  <p>Smart startup for srtudents  meal</p>
+                  <button onClick={() => window.open("https://meatupbd.netlify.app", "_blank")} className="btn-small">View Details</button>
                 </div>
               </div>
             </div>
