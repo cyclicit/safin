@@ -7,6 +7,9 @@ import './App.css';
 import { FaLinkedin, FaGithub, FaTwitter, FaArrowDown, FaMoon, FaSun } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { FiAward, FiBriefcase, FiUser, FiCode } from 'react-icons/fi';
+import rrr from '../src/dp2.jpg'
+import ttt from '../src/ttt.jpg'
+import ppp from '../src/ppp.jpg'
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -17,6 +20,8 @@ function App() {
     const savedMode = localStorage.getItem('darkMode');
     return savedMode ? JSON.parse(savedMode) : window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
+
+  const [status, setStatus] = useState("");
 
   // Apply dark mode class to body
   useEffect(() => {
@@ -62,6 +67,30 @@ function App() {
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch("https://formspree.io/f/mblovkyv", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        setStatus("Message sent successfully!");
+        form.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      setStatus("Oops! There was a problem submitting your message.");
+    }
   };
 
   return (
@@ -109,7 +138,7 @@ function App() {
           <div className="hero-text">
             <h4>Hello, I'm</h4>
             <h1>Safin Ahmed Syam</h1>
-            <h2>CEO of <a onClick={() => window.open("https://cyclicit.netlify.app", "_blank")}
+            <h2>Funder of <a onClick={() => window.open("https://cyclicit.netlify.app", "_blank")}
        
        style={{
          color: '#4a89dc',
@@ -157,7 +186,8 @@ function App() {
         <div
           className="image-bg"
           style={{
-            backgroundImage: `url('https://scontent.fdac31-2.fna.fbcdn.net/v/t39.30808-6/486780033_3966792500244829_4260637186472550903_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=BspfcK1UeggQ7kNvwElKG2n&_nc_oc=AdkgjJM8an7LgOoFjsav2nWii5lyKxEkBT-F4oo7gWOpqsC8GblnlnwIR7pRA3sN3mM&_nc_zt=23&_nc_ht=scontent.fdac31-2.fna&_nc_gid=ok6djC9hsgXY7XXTtGCBGA&oh=00_AfLsuoXcRWNQMksuPP0MWAtt0ZM9KnIx_u3m5Fd9DMSUbw&oe=681FF63F')`,
+            backgroundImage: `url(${rrr})`,
+            
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             width: '100%',
@@ -233,7 +263,7 @@ function App() {
       <div 
         className="achievement-card" 
         style={{ 
-          backgroundImage: 'url(https://scontent.fdac31-1.fna.fbcdn.net/v/t39.30808-6/476799616_3921804448076968_4418551915789673150_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=15d38e&_nc_ohc=N7ecblxM5xUQ7kNvwG_deZ7&_nc_oc=Admg19oOVOwY5CHHILxwoznved5u58cChZPAOeoj6iAe0bbOTW-KFTq6vU3uwG_eMsY&_nc_zt=23&_nc_ht=scontent.fdac31-1.fna&_nc_gid=UPmOCP5ceH3dJGOAaSgglQ&oh=00_AfI1Y58VBHLlEvSI_mfcjNSGPKR_laOBu2_vK6JkOQNHrA&oe=6820025E)',
+          backgroundImage: `url(${ttt})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -249,7 +279,7 @@ function App() {
       <div 
         className="achievement-card" 
        style={{ 
-          backgroundImage: 'url(https://studio.uxpincdn.com/studio/wp-content/uploads/2022/01/Responsive-design-best-practices.png.webp)',
+          backgroundImage:  `url(${ppp})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -277,37 +307,7 @@ function App() {
         </div>
       </div>
       
-      {/* Card 4 */}
-      <div 
-        className="achievement-card" 
-        style={{ 
-          backgroundImage: 'url(https://scontent.fdac31-1.fna.fbcdn.net/v/t39.30808-6/462968447_3825029681087779_2358784359962963659_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=TP2q36gAEVMQ7kNvwHO9Jf4&_nc_oc=AdlQBKG9IlWJgGKSBNXe2j9f_MwqdQEtrxP6JWBKeNCr4T8ExH_csJcWJYeR0sro0Yo&_nc_zt=23&_nc_ht=scontent.fdac31-1.fna&_nc_gid=KyL23_aUCTNkUWHchCRHkA&oh=00_AfKy_g-AScuJrruEBNbJN-kahZEApacgQMN-NE_cp2TY4g&oe=681FF74B)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      >
-        <div className="achievement-content">
-          <div className="achievement-icon"><FiAward /></div>
-          <h3>Former National Player</h3>
-          <p>Bangladesh Roller Skating Fedaration</p>
-        </div>
-      </div>
-      
-      {/* Card 5 */}
-      <div 
-        className="achievement-card" 
-        style={{ 
-          backgroundImage: 'url(https://scontent.fdac31-2.fna.fbcdn.net/v/t39.30808-6/467893025_122101790156629280_137397698288239201_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=6IOGGg4H2G0Q7kNvwGKSM8Q&_nc_oc=AdnQSFh_8qXg250poHV5LH4LD3spjV3pD68nRz_z1ccU4c_4HEHtEVYZ--IN3Rmja2k&_nc_zt=23&_nc_ht=scontent.fdac31-2.fna&_nc_gid=EgthEy1KCOFywGHn3TRWTw&oh=00_AfJENLh_Z8YbcQ1RrFYTsQBgZRQEaCTXauW68lDRvgdCiw&oe=681FFF36)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      >
-        <div className="achievement-content">
-          <div className="achievement-icon"><FiAward /></div>
-          <h3>Community Impact</h3>
-          <p>Founded tech education program reaching students by social-media</p>
-        </div>
-      </div>
+     { /*  */}
     </div>
   </div>
         
@@ -366,29 +366,50 @@ function App() {
                 </div>
               </div>
               
-              <div className="social-links">
-                <a href="#" className="social-icon"><FaLinkedin /></a>
-                <a href="#" className="social-icon"><FaTwitter /></a>
-                <a href="#" className="social-icon"><FaGithub /></a>
-              </div>
-            </div>
-            <div className="contact-form">
-              <form>
-                <div className="form-group">
-                  <input type="text" placeholder="Your Name" required />
-                </div>
-                <div className="form-group">
-                  <input type="email" placeholder="Your Email" required />
-                </div>
-                <div className="form-group">
-                  <input type="text" placeholder="Subject" />
-                </div>
-                <div className="form-group">
-                  <textarea placeholder="Your Message" rows="5" required></textarea>
-                </div>
-                <button type="submit" className="btn-primary">Send Message</button>
-              </form>
-            </div>
+                         </div>
+           <div className="contact-form">
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <input 
+            type="text" 
+            name="name"
+            placeholder="Your Name" 
+            required 
+          />
+        </div>
+        <div className="form-group">
+          <input 
+            type="email" 
+            name="email"
+            placeholder="Your Email" 
+            required 
+          />
+        </div>
+        <div className="form-group">
+          <input 
+            type="text" 
+            name="subject" 
+            placeholder="Subject" 
+          />
+        </div>
+        <div className="form-group">
+          <textarea 
+            name="message"
+            placeholder="Your Message" 
+            rows="5" 
+            required
+          ></textarea>
+        </div>
+        <button type="submit" className="btn-primary">
+          Send Message
+        </button>
+        {status && (
+          <div className={`form-status ${status.includes("success") ? "success" : "error"}`}>
+            {status}
+          </div>
+        )}
+      </form>
+    </div>
           </div>
         </div>
       </section>
@@ -411,18 +432,11 @@ function App() {
                 <li onClick={() => scrollToSection('contact')}>Contact</li>
               </ul>
             </div>
-            <div className="footer-social">
-              <h4>Connect With Me</h4>
-              <div className="social-icons">
-                <a href="#"><FaLinkedin /></a>
-                <a href="#"><FaTwitter /></a>
-                <a href="#"><FaGithub /></a>
-              </div>
-            </div>
+            
           </div>
           <div className="footer-bottom">
             <p>&copy; {new Date().getFullYear()} Safin Ahmed Syam. All rights reserved.</p>
-            <p>CEO of <a onClick={() => window.open("https://cyclicit.netlify.app", "_blank")}
+            <p>Funder of <a onClick={() => window.open("https://cyclicit.netlify.app", "_blank")}
        
        style={{
          color: '#4a89dc',
