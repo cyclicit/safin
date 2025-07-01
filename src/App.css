@@ -500,11 +500,12 @@ section {
 .achievement-card h3 {
   font-size: 1.3rem;
   margin-bottom: 15px;
-  color: var(--text-color);
+  color: var(--primary-color);
+  background-color: #030016;
 }
 
 .achievement-card p {
-  color: var(--text-light);
+   color: rgb(0, 212, 18);
   font-size: 0.9rem;
 }
 
@@ -554,6 +555,8 @@ section {
 .project-overlay h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
+  color: var(--primary-color);
+  background-color: var(--light-color);
 }
 
 .project-overlay p {

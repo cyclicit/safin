@@ -1,10 +1,6 @@
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { FaLinkedin, FaGithub, FaTwitter, FaArrowDown, FaMoon, FaSun } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaTwitter, FaArrowDown } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { FiAward, FiBriefcase, FiUser, FiCode } from 'react-icons/fi';
 import rrr from '../src/dp2.jpg'
@@ -15,24 +11,12 @@ function App() {
   const [activeSection, setActiveSection] = useState('home');
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(() => {
-    // Check local storage or user preference
-    const savedMode = localStorage.getItem('darkMode');
-    return savedMode ? JSON.parse(savedMode) : window.matchMedia('(prefers-color-scheme: dark)').matches;
-  });
-
   const [status, setStatus] = useState("");
 
   // Apply dark mode class to body
   useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add('dark-mode');
-      localStorage.setItem('darkMode', 'true');
-    } else {
-      document.body.classList.remove('dark-mode');
-      localStorage.setItem('darkMode', 'false');
-    }
-  }, [darkMode]);
+    document.body.classList.add('dark-mode');
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,9 +49,6 @@ function App() {
     setIsMenuOpen(false);
   };
 
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -94,7 +75,7 @@ function App() {
   };
 
   return (
-    <div className={`App ${darkMode ? 'dark-mode' : ''}`}>
+    <div className="App dark-mode">
       {/* Navigation */}
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="container">
@@ -102,10 +83,6 @@ function App() {
             scrollToSection('home');
             setIsMenuOpen(false);
           }} className="logo">Safin<span>Syam</span></div>
-
-          <button className="theme-toggle" onClick={toggleDarkMode}>
-              {darkMode ? <FaSun /> : <FaMoon />}
-            </button>
           
           {/* Nav Links */}
           <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
@@ -118,7 +95,6 @@ function App() {
                 {section.charAt(0).toUpperCase() + section.slice(1)}
               </button>
             ))}
-            
           </div>
 
           {/* Mobile menu toggle */}
@@ -130,7 +106,6 @@ function App() {
         </div>
       </nav>
 
-      {/* Rest of your components remain the same */}
       {/* Hero Section */}
       <section id="home" className="hero">
         <div className='container'>
@@ -138,12 +113,12 @@ function App() {
           <div className="hero-text">
             <h4>Hello, I'm</h4>
             <h1>Safin Ahmed Syam</h1>
-            <h2>Funder of <a onClick={() => window.open("https://cyclicit.netlify.app", "_blank")}
-       
+            <h2>Funder of <a onClick={() => window.open("https://cyclicit.com", "_blank")}
        style={{
          color: '#4a89dc',
          textDecoration: 'none',
-         fontWeight: 600
+         fontWeight: 600,
+         cursor: 'pointer'
        }}
      >
        CycliciT
@@ -177,7 +152,7 @@ function App() {
       className="about-content"
       style={{
         display: 'flex',
-        flexDirection: 'column', // mobile-first: column
+        flexDirection: 'column',
         gap: '2rem',
       }}
     >
@@ -187,7 +162,6 @@ function App() {
           className="image-bg"
           style={{
             backgroundImage: `url(${rrr})`,
-            
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             width: '100%',
@@ -236,12 +210,12 @@ function App() {
             <FiCode className="detail-icon" />
             <div>
               <h4>Company:</h4>
-              <p><a onClick={() => window.open("https://cyclicit.netlify.app", "_blank")}
-       
+              <p><a onClick={() => window.open("https://cyclicit.com", "_blank")}
        style={{
          color: '#4a89dc',
          textDecoration: 'none',
-         fontWeight: 600
+         fontWeight: 600,
+         cursor: 'pointer'
        }}
      >
        CycliciT
@@ -271,7 +245,7 @@ function App() {
         <div className="achievement-content">
           <div className="achievement-icon"><FiAward /></div>
           <h3>Complete Web Development Course 2023</h3>
-          <p>Recognized by Programming-Hero</p>
+          
         </div>
       </div>
       
@@ -279,15 +253,15 @@ function App() {
       <div 
         className="achievement-card" 
        style={{ 
-          backgroundImage:  `url(${ppp})`,
+          backgroundImage:  `url(https://i.ibb.co.com/LD5vTV8d/Screenshot-2025-05-05-104617.png)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
       >
         <div className="achievement-content">
           <div className="achievement-icon"><FiAward /></div>
-          <h3>Responsive</h3>
-          <p>Expart in making Responsive designs</p>
+          <h3>Website for Educational Institute</h3>
+          
         </div>
       </div>
       
@@ -302,16 +276,12 @@ function App() {
       >
         <div className="achievement-content">
           <div className="achievement-icon"><FiAward /></div>
-          <h3>CSE</h3>
-          <p>Brac University</p>
+          <h3>CSE,Brac University</h3>
+          
         </div>
       </div>
-      
-     { /*  */}
     </div>
   </div>
-        
-        
       </section>
 
       {/* Projects Section */}
@@ -323,7 +293,7 @@ function App() {
               <div className="project-image" style={{backgroundImage: `url(https://i.ibb.co.com/LD5vTV8d/Screenshot-2025-05-05-104617.png)`  }}>
                 <div className="project-overlay">
                   <h3>College Website</h3>
-                  <p>A fully functional Project</p>
+                  
                   <button  onClick={() => window.open("https://shahidabulkashemcollege.com", "_blank")} className="btn-small">View Details</button>
                 </div>
               </div>
@@ -332,16 +302,44 @@ function App() {
               <div className="project-image" style={{backgroundImage: `url(https://i.ibb.co.com/p6DQyhJ7/Screenshot-2025-05-05-105046.png)`}}>
                 <div className="project-overlay">
                   <h3>Pet E-Commerce</h3>
-                  <p>Prototype</p>
+                  
                   <button onClick={() => window.open("https://petandvet.netlify.app", "_blank")} className="btn-small">View Details</button>
                 </div>
               </div>
             </div>
+           
             <div className="project-card">
+              <div className="project-image" style={{backgroundImage: `url(https://i.ibb.co/rKbQRSFw/Screenshot-2025-07-01-235933.png)`}}>
+                <div className="project-overlay">
+                  <h3>Isalamic Stories</h3>
+                  
+                  <button onClick={() => window.open("https://qstories.netlify.app", "_blank")} className="btn-small">View Details</button>
+                </div>
+              </div>
+            </div>
+            <div className="project-card">
+              <div className="project-image" style={{backgroundImage: `url(https://i.ibb.co/v6BPfdx1/Screenshot-2025-07-02-000456.png)`}}>
+                <div className="project-overlay">
+                  <h3>Explore-Bangladesh</h3>
+                  
+                  <button onClick={() => window.open("https://explorebangladesh.netlify.app/", "_blank")} className="btn-small">View Details</button>
+                </div>
+              </div>
+            </div>
+            <div className="project-card">
+              <div className="project-image" style={{backgroundImage: `url(https://i.ibb.co/xtVg13d4/Screenshot-2025-07-02-001239.png)`}}>
+                <div className="project-overlay">
+                  <h3>MCQ-Test</h3>
+                  
+                  <button onClick={() => window.open("https://mcqtestbysafin.netlify.app/", "_blank")} className="btn-small">View Details</button>
+                </div>
+              </div>
+            </div>
+             <div className="project-card">
               <div className="project-image" style={{backgroundImage: `url(https://i.ibb.co.com/RpF5cSnQ/Screenshot-2025-05-06-232806.png)`}}>
                 <div className="project-overlay">
                   <h3>Meat-up</h3>
-                  <p>Smart startup for srtudents  meal</p>
+                  
                   <button onClick={() => window.open("https://meatupbd.netlify.app", "_blank")} className="btn-small">View Details</button>
                 </div>
               </div>
@@ -363,10 +361,10 @@ function App() {
                 <div>
                   <h4>Email</h4>
                   <p>safinahmedsiam@gmailcom</p>
+                  <p>+8801783245100</p>
                 </div>
               </div>
-              
-                         </div>
+            </div>
            <div className="contact-form">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -432,16 +430,15 @@ function App() {
                 <li onClick={() => scrollToSection('contact')}>Contact</li>
               </ul>
             </div>
-            
           </div>
           <div className="footer-bottom">
             <p>&copy; {new Date().getFullYear()} Safin Ahmed Syam. All rights reserved.</p>
-            <p>Funder of <a onClick={() => window.open("https://cyclicit.netlify.app", "_blank")}
-       
+            <p>Funder of <a onClick={() => window.open("https://cyclicit.com", "_blank")}
        style={{
          color: '#4a89dc',
          textDecoration: 'none',
-         fontWeight: 600
+         fontWeight: 600,
+         cursor: 'pointer'
        }}
      >
        CycliciT
