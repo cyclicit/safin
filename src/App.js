@@ -4,8 +4,14 @@ import { FaLinkedin, FaGithub, FaTwitter, FaArrowDown } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import { FiAward, FiBriefcase, FiUser, FiCode } from 'react-icons/fi';
 import rrr from '../src/dp2.jpg';
-import ttt from '../src/ttt.jpg';
-import ppp from '../src/ppp.jpg';
+
+import ppp from '../src/ttt.jpg';
+import jej from '../src/pic2.png';
+import wer from '../src/pic3.png';
+
+import vd from '../src/video.mp4';
+ import ggg from '../src/pro.png'
+
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -18,6 +24,23 @@ function App() {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(10000);
+
+  
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = [rrr,jej,wer]; // Add your image paths here
+
+  
+ 
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 2000); // Change image every 2000ms (2 seconds)
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [images.length]);
 
   // Apply dark mode class to body
   useEffect(() => {
@@ -217,18 +240,19 @@ function App() {
     >
       {/* Image Section */}
       <div className="about-image" style={{ width: '100%', maxWidth: '400px', margin: '0 auto' }}>
-        <div
-          className="image-bg"
-          style={{
-            backgroundImage: `url(${rrr})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            width: '100%',
-            height: '300px',
-            borderRadius: '10px',
-            boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)',
-          }}
-        ></div>
+       <div
+      className="image-bg"
+      style={{
+        backgroundImage: `url(${images[currentImageIndex]})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        width: '100%',
+        height: '300px',
+        borderRadius: '10px',
+        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)',
+        transition: 'var(--transition)',
+      }}
+    ></div>
       </div>
             <div className="about-text">
               <h3 style={{color: '#8E54E9'}}>Who am I?</h3>
@@ -299,7 +323,7 @@ function App() {
       <div 
         className="achievement-card" 
         style={{ 
-          backgroundImage: `url(${ttt})`,
+          backgroundImage: `url(${ppp})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -473,29 +497,56 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            
-            <div className="footer-links">
-               
-              <h4> <span style={{color: '#f9cb28'}}>Quick</span> <span style={{color: '#00c853' }}>Links</span></h4>
-              <ul>
-                <li onClick={() => scrollToSection('home')}><span style={{color: '#ff4d4d'}}>Home</span></li>
-                <li onClick={() => scrollToSection('about')}><span style={{color: '#00c853'}}>About</span></li>
-                <li onClick={() => scrollToSection('achievements')}><span style={{color: '#f9cb28'}}>Achievements</span></li>
-                <li onClick={() => scrollToSection('projects')}> <span style={{color: '#00c853'}}>Projects</span></li>
-                <li onClick={() => scrollToSection('contact')}><span style={{color: '#f9cb28'}}>Contact</span></li>
-              </ul>
-            </div>
+          <footer className="footer">
+      <div className="container">
+        <div className="footer-content">
+          <div className="footer-links">
+            <h4>
+              <span style={{ color: '#f9cb28' }}>Quick</span>{' '}
+              <span style={{ color: '#00c853' }}>Links</span>
+            </h4>
+            <ul>
+              <li onClick={() => scrollToSection('home')}>
+                <span style={{ color: '#ff4d4d' }}>Home</span>
+              </li>
+              <li onClick={() => scrollToSection('about')}>
+                <span style={{ color: '#00c853' }}>About</span>
+              </li>
+              <li onClick={() => scrollToSection('achievements')}>
+                <span style={{ color: '#f9cb28' }}>Achievements</span>
+              </li>
+              <li onClick={() => scrollToSection('projects')}>
+                <span style={{ color: '#00c853' }}>Projects</span>
+              </li>
+              <li onClick={() => scrollToSection('contact')}>
+                <span style={{ color: '#f9cb28' }}>Contact</span>
+              </li>
+            </ul>
           </div>
-          <div className="footer-bottom">
-            <p style={{color: '#00c853'}}>&copy; {new Date().getFullYear()} Safin Ahmed Siam. All rights reserved.</p>
-          
-            <p><span style={{ color: '#f9cb28'}}>+8801783245-100</span> </p>
+          <div style={{marginRight: '20px' }} className="footer-video ">
+            <video
+              width="350px"
+              height="200px"
+              
+              controls
+              style={{ borderRadius: '8px', border: '2px solid #f9cb28'}}
+            >
+              <source src='https://videos.pexels.com/video-files/2887463/2887463-hd_1920_1080_25fps.mp4' type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
-      </footer>
+        <div className="footer-bottom">
+          <p style={{ color: '#00c853' }}>
+            &copy; {new Date().getFullYear()} Safin Ahmed Siam. All rights reserved.
+          </p>
+          <p>
+            <span style={{ color: '#f9cb28' }}>+8801783245-100</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+
     </div>
   );
 }
