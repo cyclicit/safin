@@ -162,7 +162,7 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 0;
+  padding: 10px 0;
   z-index: 1000;
   transition: var(--transition);
   background-color: var(--nav-bg);
@@ -410,7 +410,7 @@ section {
 .image-bg {
   width: 100%;
   height: 100%;
-  background-image: url('https://scontent.fdac31-2.fna.fbcdn.net/v/t39.30808-6/486780033_3966792500244829_4260637186472550903_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=BspfcK1UeggQ7kNvwElKG2n&_nc_oc=AdkgjJM8an7LgOoFjsav2nWii5lyKxEkBT-F4oo7gWOpqsC8GblnlnwIR7pRA3sN3mM&_nc_zt=23&_nc_ht=scontent.fdac31-2.fna&_nc_gid=ok6djC9hsgXY7XXTtGCBGA&oh=00_AfLsuoXcRWNQMksuPP0MWAtt0ZM9KnIx_u3m5Fd9DMSUbw&oe=681FF63F');
+  background-image: url('./dp2.jpg');
   background-size: cover;
   background-position: center;
   transition: var(--transition);
@@ -501,7 +501,7 @@ section {
   font-size: 1.3rem;
   margin-bottom: 15px;
   color: var(--primary-color);
-  background-color: #030016;
+  background-color: #fcfcfe;
 }
 
 .achievement-card p {
@@ -542,7 +542,7 @@ section {
   left: 0;
   width: 100%;
   padding: 20px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(252, 252, 252, 0.8) 0%, transparent 100%);
   color: var(--white);
   transform: translateY(100%);
   transition: var(--transition);
@@ -556,7 +556,7 @@ section {
   font-size: 1.5rem;
   margin-bottom: 10px;
   color: var(--primary-color);
-  background-color: var(--light-color);
+  background-color: #fcfcfe;
 }
 
 .project-overlay p {
@@ -834,7 +834,13 @@ section {
     text-align: center;
     padding-top: 200px;
     padding-bottom: 100px;
+    margin-top: 30px;
   }
+  .hero-content h4 {
+ padding-top:5px;
+
+  }
+
 
   .hero-buttons {
     justify-content: center;
