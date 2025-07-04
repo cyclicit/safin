@@ -101,7 +101,7 @@ section {
 }
 
 .btn-primary {
-  background-color: var(--primary-color);
+  background-color: #00c853;
   color: var(--white);
   padding: 12px 30px;
   border: none;
@@ -199,7 +199,7 @@ section {
 .nav-links button {
   background: none;
   border: none;
-  color: var(--text-color);
+  color: #f9cb28;
   font-size: 1rem;
   font-weight: 600;
   margin-left: 30px;
@@ -500,8 +500,8 @@ section {
 .achievement-card h3 {
   font-size: 1.3rem;
   margin-bottom: 15px;
-  color: var(--primary-color);
-  background-color: #fcfcfe;
+  color:#f9cb28;
+  background-color: #00c853;
 }
 
 .achievement-card p {
@@ -546,6 +546,7 @@ section {
   color: var(--white);
   transform: translateY(100%);
   transition: var(--transition);
+  text-align: center;
 }
 
 .project-card:hover .project-overlay {
@@ -555,8 +556,8 @@ section {
 .project-overlay h3 {
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: var(--primary-color);
-  background-color: #fcfcfe;
+color:#f9cb28;
+  background-color: #00c853;
 }
 
 .project-overlay p {
@@ -889,6 +890,7 @@ section {
 
   .mobile-menu-btn {
     display: flex;
+    color: #00c853;
   }
 
   .hero-text h1 {

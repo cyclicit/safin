@@ -17,7 +17,7 @@ function App() {
   const [currentText, setCurrentText] = useState('');
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed, setTypingSpeed] = useState(100);
+  const [typingSpeed, setTypingSpeed] = useState(10000);
 
   // Apply dark mode class to body
   useEffect(() => {
@@ -53,11 +53,11 @@ function App() {
     if (isDeleting) {
       // Deleting text
       setCurrentText(currentPhrase.substring(0, currentText.length - 1));
-      setTypingSpeed(1000);
+      setTypingSpeed(10000);
     } else {
       // Adding text
       setCurrentText(currentPhrase.substring(0, currentText.length + 1));
-      setTypingSpeed(1000);
+      setTypingSpeed(10000);
     }
 
     if (!isDeleting && currentText === currentPhrase) {
@@ -67,7 +67,7 @@ function App() {
       // Move to next phrase after deleting
       setIsDeleting(false);
       setCurrentPhraseIndex((currentPhraseIndex + 1) % phrases.length);
-      timer = setTimeout(() => {}, 500);
+      timer = setTimeout(() => {}, 2000);
     } else {
       timer = setTimeout(() => {}, typingSpeed);
     }
@@ -116,10 +116,10 @@ function App() {
       {/* Navigation */}
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="container">
-          <div onClick={() => {
+          <div style={{cursor: 'pointer'}} onClick={() => {
             scrollToSection('home');
             setIsMenuOpen(false);
-          }} className="logo">Safin<span>siam</span></div>
+          }} className="logo"><span style={{ color:"#f9cb28" }}>S</span><span style={{color: '#00c853'}}>a</span><span style={{color: '#f9cb28'}}>f</span><span style={{color: '#00c853'}}>i</span ><span style={{color: '#f9cb28'}}>n</span><span>S<span style={{color: '#00c853'}}>i</span ><span style={{color: '#f9cb28'}}>a</span>m</span></div>
           
           {/* Nav Links */}
           <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
@@ -148,22 +148,22 @@ function App() {
         <div className='container'>
           <div className="hero-content">
             <div className="hero-text">
-              <h4 className="fade-in" style={{ animationDelay: '0.2s' }}>Hello, I'm</h4>
+              <h4 className="fade-in" ><span style={{ animationDelay: '0.2s', color : '#f9cb28'}}>Hello,</span> I'm</h4>
               <h1 className="text-gradient pop-in" style={{ animationDelay: '0.3s' }}>
-                Safin<span style={{ color:"#6c63ff" }}> Ahmed</span> siam
+                <span style={{color: '#00c853'}}>Safin</span><span style={{ color:"#6c63ff" }}> Ahmed</span> <span style={{color: '#00c853'}}>Siam</span>
               </h1>
-              <h2 className="slide-up" style={{ animationDelay: '0.5s' }}>
+              <h2 className="slide-up" style={{ animationDelay: '0.5s',color: '#8E54E9'}}>
                 CEO & Co-Founder of <a 
                   onClick={() => window.open("https://cyclicit.com", "_blank")}
                   className="cyclicit-link"
                   onMouseEnter={(e) => e.target.classList.add('hover-effect')}
                   onMouseLeave={(e) => e.target.classList.remove('hover-effect')}
-                  style={{ color:"#6c63ff" }}
+                  style={{color: 'white',  backgroundColor: '#00c853', padding: '0.2em 0.5em', borderRadius: '5px', textDecoration: 'none' ,cursor: 'pointer'}}
                 >
                   CycliciT
                 </a>
               </h2>
-              <p className="typewriter " style={{ animationDelay: '0.8s', minHeight: '1.5em' ,color: '#4a89dc'}}>
+              <p className="typewriter " style={{ animationDelay: '2s', minHeight: '1.5em' ,color: '#00c853'}}>
                 {currentText}
                
               </p>
@@ -194,7 +194,7 @@ function App() {
           <div 
             className="scroll-down bounce" 
             onClick={() => scrollToSection('about')}
-            style={{ animation: 'bounce 2s infinite' }}
+            style={{ animation: 'bounce 2s infinite' , color: '#f9cb28'}}
           >
             <FaArrowDown className="spin-on-hover" />
           </div>
@@ -204,7 +204,7 @@ function App() {
       {/* About Section */}
       <section id="about" className="about">
         <div className="container">
-          <h2 className="section-title">About <span>Me</span></h2>
+          <h2 className="section-title"><span style={{color : '#f9cb28'}}>About</span> <span style={{color :'#00c853'}}>Me</span></h2>
          
            {/* Responsive Flex Layout */}
     <div
@@ -231,14 +231,14 @@ function App() {
         ></div>
       </div>
             <div className="about-text">
-              <h3>Who am I?</h3>
+              <h3 style={{color: '#8E54E9'}}>Who am I?</h3>
           <p style={{
     fontSize: '1.1rem',
     lineHeight: '1.6',
     marginBottom: '1.5rem',
     color: '#e0e0e0'
   }}>
-    I'm <span style={{color: '#ff4d4d'}}>Safin Ahmed siam</span>, a <span style={{color: '#f9cb28'}}>web and software</span> technology <span style={{color: '#4776E6'}}>solutions provider</span>.
+    I'm <span style={{color: '#ff4d4d'}}>Safin Ahmed Siam</span>, a <span style={{color: '#f9cb28'}}>web and software</span> technology <span style={{color: '#4776E6'}}>solutions provider</span>.
     With experience in the tech industry, I've dedicated my career to <span style={{color: '#8E54E9'}}>driving innovation</span>
     and delivering <span style={{color: '#00c853'}}>cutting-edge solutions</span> to businesses, institutes and individuals.
   </p>
@@ -258,39 +258,31 @@ function App() {
                   <FiUser className="detail-icon" />
                   <div>
                     <h4>Name:</h4>
-                    <p>Safin Ahmed siam</p>
+                    <p style={{color: '#f9cb28'}}>Safin Ahmed Siam</p>
                   </div>
                 </div>
                 <div className="detail-item">
                   <HiOutlineMail className="detail-icon" />
                   <div>
                     <h4>Email:</h4>
-                    <p>safinahmedsiam@gmail.com</p>
+                    <p style={{color: '#00c853'}}>safinahmedSiam@gmail.com</p>
                   </div>
                 </div>
                 <div className="detail-item">
                   <FiBriefcase className="detail-icon" />
                   <div>
                     <h4>Position:</h4>
-                    <p>CEO & Co-Founder</p>
+                    <p style={{color: '#f9cb28'}}>CEO & Co-Founder , Cyclic-iT</p>
                   </div>
                 </div>
                 <div className="detail-item">
-                  <FiCode className="detail-icon" />
+                  <FiBriefcase className="detail-icon" />
                   <div>
-                    <h4>at:</h4>
-                    <p><a onClick={() => window.open("https://cyclicit.com", "_blank")}
-                        style={{
-                          color: '#4a89dc',
-                          textDecoration: 'none',
-                          fontWeight: 600,
-                          cursor: 'pointer'
-                        }}
-                      >
-                        CycliciT
-                      </a></p>
+                    <h4>Skills:</h4>
+                    <p style={{color: '#00c853'}}>React.js , Front-end Engineering </p>
                   </div>
                 </div>
+                
               </div>
             </div>
           </div>
@@ -301,7 +293,7 @@ function App() {
        {/* Achievements Section */}
       <section id="achievements" className="achievements">
         <div className="container">
-    <h2 className="section-title">My <span>Achievements</span></h2>
+    <h2 className="section-title"> <span style={{color : '#f9cb28'}}>My</span> <span style={{color :'#00c853'}}>Achievements</span></h2>
     <div className="achievements-grid">
       {/* Card 1 */}
       <div 
@@ -357,7 +349,7 @@ function App() {
       {/* Projects Section */}
       <section id="projects" className="projects">
         <div className="container">
-          <h2 className="section-title">Notable <span>Projects/Prototypes</span></h2>
+          <h2 className="section-title"> <span style={{color :'#00c853'}}>Notable</span> <span>Projects/ <span style={{color : '#f9cb28'}}>Prototypes</span> </span></h2>
           <div className="projects-grid">
             <div className="project-card">
               <div className="project-image" style={{backgroundImage: `url(https://i.ibb.co.com/LD5vTV8d/Screenshot-2025-05-05-104617.png)`}}>
@@ -414,17 +406,22 @@ function App() {
       {/* Contact Section */}
       <section id="contact" className="contact">
         <div className="container">
-          <h2 className="section-title">Get In <span>Touch</span></h2>
+          <h2 className="section-title"> <span style={{color: '#00c853'}}>Get <span style={{color: '#f9cb28'}}>In</span></span> <span>Touch</span></h2>
+           <p className="typewriter " style={{ animationDelay: '0.8s', minHeight: '1.5em' ,color: '#f9cb28'}}>
+                {currentText}
+               
+              </p>
           <div className="contact-content">
             <div className="contact-info">
-              <h3>Contact Information</h3>
+             
+              <h3 style={{color: '#00c853'}}>Contact Information</h3>
               <p>Feel free to reach out for collaborations, speaking engagements, or just to say hello!</p>
               <div className="info-item">
                 <HiOutlineMail className="info-icon" />
                 <div>
-                  <h4>Email</h4>
-                  <p>safinahmedsiam@gmailcom</p>
-                  <p>+8801783245100</p>
+                  <h4 style={{color: '#f9cb28'}}>Email</h4>
+                  <p>safinahmedSiam@gmail.com</p>
+                  <p>+8801783245-100</p>
                 </div>
               </div>
             </div>
@@ -481,24 +478,21 @@ function App() {
           <div className="footer-content">
             
             <div className="footer-links">
-               <p className="typewriter " style={{ animationDelay: '0.8s', minHeight: '1.5em' ,color: '#4a89dc'}}>
-                {currentText}
                
-              </p>
-              <h4>Quick Links</h4>
+              <h4> <span style={{color: '#f9cb28'}}>Quick</span> <span style={{color: '#00c853' }}>Links</span></h4>
               <ul>
-                <li onClick={() => scrollToSection('home')}>Home</li>
-                <li onClick={() => scrollToSection('about')}>About</li>
-                <li onClick={() => scrollToSection('achievements')}>Achievements</li>
-                <li onClick={() => scrollToSection('projects')}>Projects</li>
-                <li onClick={() => scrollToSection('contact')}>Contact</li>
+                <li onClick={() => scrollToSection('home')}><span style={{color: '#ff4d4d'}}>Home</span></li>
+                <li onClick={() => scrollToSection('about')}><span style={{color: '#00c853'}}>About</span></li>
+                <li onClick={() => scrollToSection('achievements')}><span style={{color: '#f9cb28'}}>Achievements</span></li>
+                <li onClick={() => scrollToSection('projects')}> <span style={{color: '#00c853'}}>Projects</span></li>
+                <li onClick={() => scrollToSection('contact')}><span style={{color: '#f9cb28'}}>Contact</span></li>
               </ul>
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; {new Date().getFullYear()} Safin Ahmed siam. All rights reserved.</p>
+            <p style={{color: '#00c853'}}>&copy; {new Date().getFullYear()} Safin Ahmed Siam. All rights reserved.</p>
           
-            <p> +8801783245100</p>
+            <p><span style={{ color: '#f9cb28'}}>+8801783245-100</span> </p>
           </div>
         </div>
       </footer>
