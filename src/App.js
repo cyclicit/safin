@@ -8,8 +8,13 @@ import rrr from '../src/dp2.jpg';
 import ppp from '../src/ttt.jpg';
 import jej from '../src/pic2.png';
 import wer from '../src/pic3.png';
+import pre from '../src/pic4.jpg';
+ import abam from '../src/abam.jpg';
+ import football from '../src/football.jpg';
+ import s2 from '../src/s3.jpg';
+ import sp2 from '../src/sp2.jpg'
 
-import vd from '../src/video.mp4';
+
  import ggg from '../src/pro.png'
 
 
@@ -27,7 +32,7 @@ function App() {
 
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = [rrr,jej,wer]; // Add your image paths here
+  const images = [rrr,abam,pre,football,s2]; // Add your image paths here
 
   
  
@@ -37,7 +42,7 @@ function App() {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 2000); // Change image every 2000ms (2 seconds)
+    }, 1000); // Change image every 2000ms (2 seconds)
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, [images.length]);
@@ -256,25 +261,105 @@ function App() {
       </div>
             <div className="about-text">
               <h3 style={{color: '#8E54E9'}}>Who am I?</h3>
-          <p style={{
-    fontSize: '1.1rem',
-    lineHeight: '1.6',
-    marginBottom: '1.5rem',
-    color: '#e0e0e0'
-  }}>
-    I'm <span style={{color: '#ff4d4d'}}>Safin Ahmed Siam</span>, a <span style={{color: '#f9cb28'}}>web and software</span> technology <span style={{color: '#4776E6'}}>solutions provider</span>.
-    With experience in the tech industry, I've dedicated my career to <span style={{color: '#8E54E9'}}>driving innovation</span>
-    and delivering <span style={{color: '#00c853'}}>cutting-edge solutions</span> to businesses, institutes and individuals.
-  </p>
-  
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
   <p style={{
     fontSize: '1.1rem',
-    lineHeight: '1.6',
-    color: '#e0e0e0'
+    lineHeight: '1.8',
+    marginBottom: '1.8rem',
+    color: '#e0e0e0',
+    transition: 'all 0.6s ease',
+    padding: '0.8rem',
+    ':hover': {
+      background: 'linear-gradient(90deg, rgba(142, 84, 233, 0.1) 0%, rgba(71, 118, 230, 0.1) 100%)',
+      borderRadius: '8px'
+    }
   }}>
-    My journey began as a <span style={{color: '#ff6d00'}}>passionate developer</span>, and through <span style={{color: '#ff4d4d'}}>years of dedication</span>,
-    I've grown into a <span style={{color: '#4776E6'}}>technologist</span> who builds teams that create <span style={{color: '#00c853'}}>impactful work</span> and products.
+    I'm <span style={{
+      background: 'linear-gradient(135deg, #ff4d4d 0%, #8E54E9 100%)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      color: 'transparent',
+      fontWeight: 500,
+      transition: 'all 0.4s ease',
+      ':hover': {
+        textShadow: '0 0 12px rgba(142, 84, 233, 0.4)'
+      }
+    }}>Safin Ahmed Siam</span>, a <span style={{
+      background: 'linear-gradient(90deg, #f9cb28 0%, #ff6d00 100%)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      color: 'transparent',
+      fontStyle: 'italic'
+    }}>web and software</span> technology <span style={{
+      background: 'linear-gradient(90deg, #4776E6 0%, #00c853 100%)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      color: 'transparent'
+    }}>solutions provider</span>.
+    With experience in the tech industry, I've dedicated my career to <span style={{
+      background: 'linear-gradient(90deg, #8E54E9 0%, #ff4d4d 100%)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      color: 'transparent',
+      transition: 'all 0.4s ease',
+      ':hover': {
+        letterSpacing: '0.8px'
+      }
+    }}>driving innovation </span>
+    and delivering <span style={{
+      background: 'linear-gradient(90deg, #00c853 0%, #4776E6 100%)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      color: 'transparent',
+      fontWeight: 500
+    }}>cutting-edge solutions</span> to businesses, institutes and individuals.
   </p>
+
+  <p style={{
+    fontSize: '1.1rem',
+    lineHeight: '1.8',
+    color: '#e0e0e0',
+    transition: 'all 0.6s ease',
+    padding: '0.8rem',
+    ':hover': {
+      background: 'linear-gradient(90deg, rgba(71, 118, 230, 0.1) 0%, rgba(142, 84, 233, 0.1) 100%)',
+      borderRadius: '8px'
+    }
+  }}>
+    My journey began as a <span style={{
+      background: 'linear-gradient(90deg, #ff6d00 0%, #ff4d4d 100%)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      color: 'transparent',
+      transition: 'all 0.4s ease',
+      ':hover': {
+        textShadow: '0 0 8px rgba(255, 109, 0, 0.3)'
+      }
+    }}>passionate developer</span>, and through <span style={{
+      background: 'linear-gradient(90deg, #ff4d4d 0%, #8E54E9 100%)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      color: 'transparent'
+    }}>years of dedication</span>,
+    I've grown into a <span style={{
+      background: 'linear-gradient(90deg, #4776E6 0%, #8E54E9 100%)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      color: 'transparent',
+      fontStyle: 'italic'
+    }}>technologist</span> who builds teams that create <span style={{
+      background: 'linear-gradient(90deg, #00c853 0%, #8E54E9 100%)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      color: 'transparent',
+      fontWeight: 500,
+      transition: 'all 0.4s ease',
+      ':hover': {
+        letterSpacing: '0.5px'
+      }
+    }}>impactful work</span> and products.
+  </p>
+</div>
 
 
               <div className="about-details">
@@ -314,40 +399,144 @@ function App() {
       </section>
 
       {/* Achievements Section */}
-       {/* Achievements Section */}
-      <section id="achievements" className="achievements">
-        <div className="container">
-    <h2 className="section-title"> <span style={{color : '#f9cb28'}}>My</span> <span style={{color :'#00c853'}}>Achievements</span></h2>
-    <div className="achievements-grid">
+      {/* Achievements Section */}
+<section id="achievements" className="achievements">
+  <div className="container">
+    <h2 className="section-title"> 
+      <span style={{color: '#f9cb28'}}>My</span> 
+      <span style={{color: '#00c853'}}>Achievements</span>
+    </h2>
+
+   {/* Main Highlight Card - Skating */}
+<div 
+  className="achievement-card highlight-card"
+  style={{ 
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '400px', // Increased height to accommodate all elements
+    position: 'relative',
+    marginBottom: '30px',
+    borderRadius: '12px',
+    boxShadow: '0 10px 20px rgba(0,0,0,0.3)',
+    overflow: 'hidden',
+    backgroundColor: '#8E54E9'
+  }}
+>
+  {/* Top Text Section */}
+  <div style={{
+    padding: '15px 20px',
+    background: '#00c853', // Green background
+    color: 'white',
+    textAlign: 'center'
+  }}>
+    <h4 style={{ 
+      margin: 0,
+      fontSize: 'clamp(1.2rem, 2vw, 1.8rem)',
+      fontWeight: 'bold'
+    }}>
+      Represented Bangladesh National Team in Roller Skating
+    </h4>
+  </div>
+
+  {/* Image Section - Takes remaining space */}
+  <div style={{
+    flex: 1,
+    backgroundImage: `url(${sp2})`,
+    backgroundSize: 'contain',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'center',
+    backgroundColor: '#8E54E9' // Fallback color
+  }}></div>
+
+  {/* Bottom Text Section */}
+  <div style={{
+    padding: '15px 20px',
+    background: '#f9cb28', // Yellow background
+    color: '#333',
+    textAlign: 'center'
+  }}>
+    <p style={{
+      margin: 0,
+      fontSize: 'clamp(1rem, 1.5vw, 1.3rem)',
+      fontWeight: 'bold',
+      color:'black'
+    }}>
+      Competed in South-Asian tournaments representing my country
+    </p>
+  </div>
+</div>
+
+    {/* Regular Achievement Cards Grid */}
+    <div className="achievements-grid" style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+      gap: '20px'
+    }}>
       {/* Card 1 */}
       <div 
         className="achievement-card" 
         style={{ 
           backgroundImage: `url(${ppp})`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          minHeight: '200px',
+          borderRadius: '8px',
+          position: 'relative',
+          overflow: 'hidden'
         }}
       >
-        <div className="achievement-content">
-          <div className="achievement-icon"><FiAward /></div>
-          <h3>Complete Web Development Course 2023</h3>
-          
+        <div className="achievement-content" style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          padding: '15px',
+          background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%)',
+          color: 'white'
+        }}>
+          <div className="achievement-icon" style={{
+            fontSize: '2rem',
+            marginBottom: '10px',
+            color: '#f9cb28'
+          }}><FiAward /></div>
+          <h3 style={{ 
+            margin: 0,
+            fontSize: '1.2rem'
+          }}>Complete Web Development Course 2023</h3>
         </div>
       </div>
       
       {/* Card 2 */}
       <div 
         className="achievement-card" 
-       style={{ 
-          backgroundImage:  `url(https://i.ibb.co.com/LD5vTV8d/Screenshot-2025-05-05-104617.png)`,
+        style={{ 
+          backgroundImage: `url(https://i.ibb.co.com/LD5vTV8d/Screenshot-2025-05-05-104617.png)`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          minHeight: '200px',
+          borderRadius: '8px',
+          position: 'relative',
+          overflow: 'hidden'
         }}
       >
-        <div className="achievement-content">
-          <div className="achievement-icon"><FiAward /></div>
-          <h3>Website for Educational Institute</h3>
-          
+        <div className="achievement-content" style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          padding: '15px',
+          background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%)',
+          color: 'white'
+        }}>
+          <div className="achievement-icon" style={{
+            fontSize: '2rem',
+            marginBottom: '10px',
+            color: '#f9cb28'
+          }}><FiAward /></div>
+          <h3 style={{ 
+            margin: 0,
+            fontSize: '1.2rem'
+          }}>Website for Educational Institute</h3>
         </div>
       </div>
       
@@ -357,18 +546,36 @@ function App() {
         style={{ 
           backgroundImage: 'url(https://www.tbsnews.net/sites/default/files/styles/infograph/public/images/2025/03/11/img_3642_0.jpg)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          minHeight: '200px',
+          borderRadius: '8px',
+          position: 'relative',
+          overflow: 'hidden'
         }}
       >
-        <div className="achievement-content">
-          <div className="achievement-icon"><FiAward /></div>
-          <h3>CSE,Brac University</h3>
-          
+        <div className="achievement-content" style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          padding: '15px',
+          background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%)',
+          color: 'white'
+        }}>
+          <div className="achievement-icon" style={{
+            fontSize: '2rem',
+            marginBottom: '10px',
+            color: '#f9cb28'
+          }}><FiAward /></div>
+          <h3 style={{ 
+            margin: 0,
+            fontSize: '1.2rem'
+          }}>CSE, Brac University</h3>
         </div>
       </div>
     </div>
   </div>
-      </section>
+</section>
 
       {/* Projects Section */}
       <section id="projects" className="projects">
@@ -431,24 +638,9 @@ function App() {
       <section id="contact" className="contact">
         <div className="container">
           <h2 className="section-title"> <span style={{color: '#00c853'}}>Get <span style={{color: '#f9cb28'}}>In</span></span> <span>Touch</span></h2>
-           <p className="typewriter " style={{ animationDelay: '0.8s', minHeight: '1.5em' ,color: '#f9cb28'}}>
-                {currentText}
-               
-              </p>
+          
           <div className="contact-content">
-            <div className="contact-info">
-             
-              <h3 style={{color: '#00c853'}}>Contact Information</h3>
-              <p>Feel free to reach out for collaborations, speaking engagements, or just to say hello!</p>
-              <div className="info-item">
-                <HiOutlineMail className="info-icon" />
-                <div>
-                  <h4 style={{color: '#f9cb28'}}>Email</h4>
-                  <p>safinahmedSiam@gmail.com</p>
-                  <p>+8801783245-100</p>
-                </div>
-              </div>
-            </div>
+            
             <div className="contact-form">
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -492,60 +684,81 @@ function App() {
                 )}
               </form>
             </div>
+            <div className="contact-info">
+             
+              <h3 style={{color: '#00c853'}}>Contact Information</h3>
+              <p>Feel free to reach out for collaborations, speaking engagements, or just to say hello!</p>
+              <div className="info-item">
+                <HiOutlineMail className="info-icon" />
+                <div>
+                  <h4 style={{color: '#f9cb28'}}>Email</h4>
+                  <p>safinahmedSiam@gmail.com</p>
+                  <p>+8801783245-100</p>
+                   <p className="typewriter " style={{ animationDelay: '0.8s', minHeight: '1.5em' ,color: '#f9cb28'}}>
+                {currentText}
+           </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-          <footer className="footer">
-      <div className="container">
-        <div className="footer-content">
-          <div className="footer-links">
-            <h4>
-              <span style={{ color: '#f9cb28' }}>Quick</span>{' '}
-              <span style={{ color: '#00c853' }}>Links</span>
-            </h4>
-            <ul>
-              <li onClick={() => scrollToSection('home')}>
-                <span style={{ color: '#ff4d4d' }}>Home</span>
-              </li>
-              <li onClick={() => scrollToSection('about')}>
-                <span style={{ color: '#00c853' }}>About</span>
-              </li>
-              <li onClick={() => scrollToSection('achievements')}>
-                <span style={{ color: '#f9cb28' }}>Achievements</span>
-              </li>
-              <li onClick={() => scrollToSection('projects')}>
-                <span style={{ color: '#00c853' }}>Projects</span>
-              </li>
-              <li onClick={() => scrollToSection('contact')}>
-                <span style={{ color: '#f9cb28' }}>Contact</span>
-              </li>
-            </ul>
-          </div>
-          <div style={{marginRight: '20px' }} className="footer-video ">
-            <video
-              width="350px"
-              height="200px"
-              
-              controls
-              style={{ borderRadius: '8px', border: '2px solid #f9cb28'}}
-            >
-              <source src='https://videos.pexels.com/video-files/2887463/2887463-hd_1920_1080_25fps.mp4' type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p style={{ color: '#00c853' }}>
-            &copy; {new Date().getFullYear()} Safin Ahmed Siam. All rights reserved.
-          </p>
-          <p>
-            <span style={{ color: '#f9cb28' }}>+8801783245-100</span>
-          </p>
-        </div>
+     {/* Footer */}
+<footer className="footer">
+  <div className="container">
+    <div className="footer-content">
+      <div className="footer-links">
+        <h4>
+          <span style={{ color: '#f9cb28' }}>Quick</span>{' '}
+          <span style={{ color: '#00c853' }}>Links</span>
+        </h4>
+        <ul>
+          <li onClick={() => scrollToSection('home')}>
+            <span style={{ color: '#ff4d4d' }}>Home</span>
+          </li>
+          <li onClick={() => scrollToSection('about')}>
+            <span style={{ color: '#00c853' }}>About</span>
+          </li>
+          <li onClick={() => scrollToSection('achievements')}>
+            <span style={{ color: '#f9cb28' }}>Achievements</span>
+          </li>
+          <li onClick={() => scrollToSection('projects')}>
+            <span style={{ color: '#00c853' }}>Projects</span>
+          </li>
+          <li onClick={() => scrollToSection('contact')}>
+            <span style={{ color: '#f9cb28' }}>Contact</span>
+          </li>
+        </ul>
       </div>
-    </footer>
+      <div className="footer-video">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            borderRadius: '8px',
+            border: '2px solid #f9cb28'
+          }}
+        >
+          <source src='https://videos.pexels.com/video-files/2887463/2887463-hd_1920_1080_25fps.mp4' type="video/mp4" />
+        </video>
+      </div>
+    </div>
+    <div className="footer-bottom">
+      <p style={{ color: '#00c853' }}>
+        &copy; {new Date().getFullYear()} Safin Ahmed Siam. All rights reserved.
+      </p>
+      <p>
+        <span style={{ color: '#f9cb28' }}>+8801783245-100</span>
+      </p>
+    </div>
+  </div>
+</footer>
 
     </div>
   );
