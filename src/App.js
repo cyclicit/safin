@@ -13,6 +13,7 @@ import pre from '../src/pic4.jpg';
  import football from '../src/football.jpg';
  import s2 from '../src/s3.jpg';
  import sp2 from '../src/sp2.jpg'
+ import tkr from '../src/tkr.png';
 
 
  import ggg from '../src/pro.png'
@@ -32,7 +33,8 @@ function App() {
 
   
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const images = [rrr,abam,pre,football,s2]; // Add your image paths here
+  //const images = [rrr,abam,pre,football,s2]; // Add your image paths here
+  const images = [tkr];
 
   
  
@@ -42,7 +44,7 @@ function App() {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
-    }, 1000); // Change image every 2000ms (2 seconds)
+    }, 2000); // Change image every 2000ms (2 seconds)
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, [images.length]);
@@ -181,15 +183,7 @@ function App() {
                 <span style={{color: '#00c853'}}>Safin</span><span style={{ color:"#6c63ff" }}> Ahmed</span> <span style={{color: '#00c853'}}>Siam</span>
               </h1>
               <h2 className="slide-up" style={{ animationDelay: '0.5s',color: '#8E54E9'}}>
-                CEO & Co-Founder of <a 
-                  onClick={() => window.open("https://cyclicit.com", "_blank")}
-                  className="cyclicit-link"
-                  onMouseEnter={(e) => e.target.classList.add('hover-effect')}
-                  onMouseLeave={(e) => e.target.classList.remove('hover-effect')}
-                  style={{color: 'white',  backgroundColor: '#00c853', padding: '0.2em 0.5em', borderRadius: '5px', textDecoration: 'none' ,cursor: 'pointer'}}
-                >
-                  CycliciT
-                </a>
+               "I code to bring ideas to life and turn dreams into reality."
               </h2>
               <p className="typewriter " style={{ animationDelay: '2s', minHeight: '1.5em' ,color: '#00c853'}}>
                 {currentText}
@@ -243,22 +237,7 @@ function App() {
         gap: '2rem',
       }}
     >
-      {/* Image Section */}
-      <div className="about-image" style={{ width: '100%', maxWidth: '400px', margin: '0 auto' }}>
-       <div
-      className="image-bg"
-      style={{
-        backgroundImage: `url(${images[currentImageIndex]})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        width: '100%',
-        height: '300px',
-        borderRadius: '10px',
-        boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)',
-        transition: 'var(--transition)',
-      }}
-    ></div>
-      </div>
+      
             <div className="about-text">
               <h3 style={{color: '#8E54E9'}}>Who am I?</h3>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
@@ -284,7 +263,7 @@ function App() {
       ':hover': {
         textShadow: '0 0 12px rgba(142, 84, 233, 0.4)'
       }
-    }}>Safin Ahmed Siam</span>, a <span style={{
+    }}>Safin Ahmed </span>, a <span style={{
       background: 'linear-gradient(90deg, #f9cb28 0%, #ff6d00 100%)',
       WebkitBackgroundClip: 'text',
       backgroundClip: 'text',
@@ -367,21 +346,29 @@ function App() {
                   <FiUser className="detail-icon" />
                   <div>
                     <h4>Name:</h4>
-                    <p style={{color: '#f9cb28'}}>Safin Ahmed Siam</p>
+                    <p style={{color: '#f9cb28'}}>Safin Ahmed </p>
                   </div>
                 </div>
                 <div className="detail-item">
                   <HiOutlineMail className="detail-icon" />
                   <div>
                     <h4>Email:</h4>
-                    <p style={{color: '#00c853'}}>safinahmedSiam@gmail.com</p>
+                    <p style={{color: '#00c853'}}>safinahmedsiam@gmail.com</p>
                   </div>
                 </div>
                 <div className="detail-item">
                   <FiBriefcase className="detail-icon" />
                   <div>
                     <h4>Position:</h4>
-                    <p style={{color: '#f9cb28'}}>CEO & Co-Founder , Cyclic-iT</p>
+                    <p style={{color: '#f9cb28'}}>CEO & Co-Founder <span style={{color:'var(--text-color'}}>at</span> <button className="btn-primary pulse-on-hover" ><a 
+            onClick={() => window.open("https://cyclicit.com", "_blank")}
+            className="cyclicit-link"
+            onMouseEnter={(e) => e.target.classList.add('hover-effect')}
+            onMouseLeave={(e) => e.target.classList.remove('hover-effect')}
+            style={{ cursor: 'pointer', color: '#f9cb28', textDecoration: 'none' }}
+          >
+            CycliciT
+          </a></button></p>
                   </div>
                 </div>
                 <div className="detail-item">
@@ -394,8 +381,136 @@ function App() {
                 
               </div>
             </div>
+         {/* Image Section */}
+<div className="about-image" style={{ width: '100%', maxWidth: '400px', margin: '0 auto', position: 'relative' }}>
+  <div
+    className="image-bg"
+    style={{
+      backgroundImage: `url(${images[currentImageIndex]})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      width: '100%',
+      height: '300px',
+      borderRadius: '10px',
+      boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)',
+      transition: 'var(--transition)',
+    }}
+  >{/* Crazy Italic "Let's Connect" Heading */}
+    <h4 style={{
+      position: 'absolute',
+      top: '70px',
+      left: '60px',
+      fontFamily: "'Brush Script MT', cursive, sans-serif",
+      fontStyle: 'italic',
+      fontWeight: 'bold',
+      fontSize: '24px',
+      color: '#fff',
+      textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
+      transform: 'rotate(-10deg)',
+      margin: '0',
+      animation: 'crazyFloat 3s ease-in-out infinite'
+    }}>
+      Let's Connect
+    </h4></div>
+  
+  {/* Animated Text Overlay */}
+  <div 
+    style={{
+      position: 'absolute',
+      bottom: '20px',
+      left: '0',
+      right: '0',
+      textAlign: 'center',
+      padding: '15px',
+      backgroundColor: 'rgba(0, 0, 0, 0.7)',
+      color: '#fff',
+      borderRadius: '10px',
+      animation: 'fadeInUp 1s ease-in-out, glow 2.5s infinite alternate',
+    }}
+  >
+    
+    
+    <p style={{ margin: '0', fontSize: '14px', lineHeight: '1.5' }}>
+      <span style={{ 
+        display: 'inline-block',
+        animation: 'wave 3s ease-in-out infinite',
+        animationDelay: 'calc(0.1s * var(--i))'
+      }}>
+        G
+      </span>
+      <span style={{ 
+        display: 'inline-block',
+        animation: 'wave 3s ease-in-out infinite',
+        animationDelay: 'calc(0.1s * var(--i) + 0.1s)'
+      }}>
+        r
+      </span>
+      <span style={{ 
+        display: 'inline-block',
+        animation: 'wave 3s ease-in-out infinite',
+        animationDelay: 'calc(0.1s * var(--i) + 0.2s)'
+      }}>
+        e
+      </span>
+      <span style={{ 
+        display: 'inline-block',
+        animation: 'wave 3s ease-in-out infinite',
+        animationDelay: 'calc(0.1s * var(--i) + 0.3s)'
+      }}>
+        e
+      </span>
+      <span style={{ 
+        display: 'inline-block',
+        animation: 'wave 3s ease-in-out infinite',
+        animationDelay: 'calc(0.1s * var(--i) + 0.4s)'
+      }}>
+        t
+      </span>
+      <span style={{ 
+        display: 'inline-block',
+        animation: 'wave 3s ease-in-out infinite',
+        animationDelay: 'calc(0.1s * var(--i) + 0.5s)'
+      }}>
+        i
+      </span>
+      <span style={{ 
+        display: 'inline-block',
+        animation: 'wave 3s ease-in-out infinite',
+        animationDelay: 'calc(0.1s * var(--i) + 0.6s)'
+      }}>
+        n
+      </span>
+      <span style={{ 
+        display: 'inline-block',
+        animation: 'wave 3s ease-in-out infinite',
+        animationDelay: 'calc(0.1s * var(--i) + 0.7s)'
+      }}>
+        g
+      </span>
+      <span style={{ 
+        display: 'inline-block',
+        animation: 'wave 3s ease-in-out infinite',
+        animationDelay: 'calc(0.1s * var(--i) + 0.8s)'
+      }}>
+        s
+      </span>
+      <span style={{ 
+        display: 'inline-block',
+        animation: 'wave 3s ease-in-out infinite',
+        animationDelay: 'calc(0.1s * var(--i) + 0.9s)'
+      }}>
+        !
+      </span>
+    </p>
+    <p style={{ margin: '10px 0 0', fontSize: '13px' }}>
+      Hope you're doing well. For any queries, fill out the contact form or mail me.
+    </p>
+  </div>
+</div>
           </div>
+          
         </div>
+        
       </section>
 
       {/* Achievements Section */}
@@ -419,7 +534,7 @@ function App() {
     borderRadius: '12px',
     boxShadow: '0 10px 20px rgba(0,0,0,0.3)',
     overflow: 'hidden',
-    backgroundColor: '#8E54E9'
+    backgroundColor: 'black'
   }}
 >
   {/* Top Text Section */}
@@ -445,7 +560,7 @@ function App() {
     backgroundSize: 'contain',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    backgroundColor: '#8E54E9' // Fallback color
+    backgroundColor: 'black' // Fallback color
   }}></div>
 
   {/* Bottom Text Section */}
@@ -461,7 +576,7 @@ function App() {
       fontWeight: 'bold',
       color:'black'
     }}>
-      Competed in South-Asian tournaments representing my country
+      Kathmandu, Nepal - 2017<br />
     </p>
   </div>
 </div>
@@ -692,7 +807,7 @@ function App() {
                 <HiOutlineMail className="info-icon" />
                 <div>
                   <h4 style={{color: '#f9cb28'}}>Email</h4>
-                  <p>safinahmedSiam@gmail.com</p>
+                  <p>safinahmedsiam@gmail.com</p>
                   <p>+8801783245-100</p>
                    <p className="typewriter " style={{ animationDelay: '0.8s', minHeight: '1.5em' ,color: '#f9cb28'}}>
                 {currentText}
@@ -715,7 +830,7 @@ function App() {
         </h4>
         <ul>
           <li onClick={() => scrollToSection('home')}>
-            <span style={{ color: '#ff4d4d' }}>Home</span>
+            <span style={{ color: 'white' }}>Home</span>
           </li>
           <li onClick={() => scrollToSection('about')}>
             <span style={{ color: '#00c853' }}>About</span>
@@ -751,7 +866,7 @@ function App() {
     </div>
     <div className="footer-bottom">
       <p style={{ color: '#00c853' }}>
-        &copy; {new Date().getFullYear()} Safin Ahmed Siam. All rights reserved.
+        &copy; {new Date().getFullYear()} Safin Ahmed . All rights reserved.
       </p>
       <p>
         <span style={{ color: '#f9cb28' }}>+8801783245-100</span>
