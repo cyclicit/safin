@@ -330,7 +330,7 @@ function App() {
 <section id="achievements" className="achievements-new">
   <div className="container-new">
     <h2 className="section-title-new">
-      <span className="title-part-1">My</span>
+      
       <span className="title-part-2">Achievements</span>
     </h2>
 
@@ -414,10 +414,10 @@ function App() {
               </div>
             </div>
             <div className="project-card">
-              <div className="project-image" style={{backgroundImage: `url(https://i.ibb.co/v6BPfdx1/Screenshot-2025-07-02-000456.png)`}}>
+              <div className="project-image" style={{backgroundImage: `url(https://i.ibb.co/ZpqfF2K1/Screenshot-2025-07-12-045209.png)`}}>
                 <div className="project-overlay">
-                  <h3>Explore-Bangladesh</h3>
-                  <button onClick={() => window.open("https://explorebangladesh.netlify.app/", "_blank")} className="btn-small">View Details</button>
+                  <h3>Saf-Flix</h3>
+                  <button onClick={() => window.open("https://safflix-reborn-frontend.lovable.app/", "_blank")} className="btn-small">View Details</button>
                 </div>
               </div>
             </div>
@@ -430,10 +430,10 @@ function App() {
               </div>
             </div>
             <div className="project-card">
-              <div className="project-image" style={{backgroundImage: `url(https://i.ibb.co.com/RpF5cSnQ/Screenshot-2025-05-06-232806.png)`}}>
+              <div className="project-image" style={{backgroundImage: `url(https://i.ibb.co/Wv3rqwBj/Screenshot-2025-07-12-045705.png)`}}>
                 <div className="project-overlay">
-                  <h3>Meat-up</h3>
-                  <button onClick={() => window.open("https://meatupbd.netlify.app", "_blank")} className="btn-small">View Details</button>
+                  <h3>Save-Tista</h3>
+                  <button onClick={() => window.open("https://savetista.netlify.app/", "_blank")} className="btn-small">View Details</button>
                 </div>
               </div>
             </div>
